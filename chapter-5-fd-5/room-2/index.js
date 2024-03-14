@@ -16,5 +16,5 @@ server.post('/hitung-luas', rumusLuas)
 server.post('/hitung-keliling', rumusKeliling)
 
 server.listen(PORT, () => {
-  console.log("🚀 ~ server.listen ~ PORT:", PORT);
+  console.log(`Server berjalan di localhost:${PORT}`);
 });
