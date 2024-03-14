@@ -9,6 +9,10 @@ const lihat_history = require("./controller/lihat-history");
 // todo : Routing
 server.get("/lihat-history", lihat_history);
 
+server.post('/hitung-luas', rumusLuas)
+
+server.post('/hitung-keliling', rumusKeliling)
+
 server.listen(PORT, () => {
   console.log("🚀 ~ server.listen ~ PORT:", PORT);
 });
