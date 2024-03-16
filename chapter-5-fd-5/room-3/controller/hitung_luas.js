@@ -1,3 +1,5 @@
+const history = require("../model/history")
+
 function luasBelahKetupat (req, res) {
     // 1. ambil data dari client
     const data = req.body;
@@ -5,4 +7,6 @@ function luasBelahKetupat (req, res) {
     const lebar = data.lebar;
     // 2. hitung luas
     const luas = panjang * lebar/2;
-}
+};
+
+module.exports = luasBelahKetupat;

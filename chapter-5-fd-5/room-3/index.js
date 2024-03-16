@@ -1,6 +1,9 @@
 // 1. panggil dulu module expressnya
 const express = require ('express');
 // 2. bikin variabel untuk menyimpan servernya
+const luasBelahKetupat = require ('./controller/hitung_luas');
+const kelilingBelahKetupat = require ('./controller/hitung_keliling');
+
 const app = express();
 app.use(express.urlencoded());
 
@@ -12,18 +15,10 @@ app.get('/', function (req, res) {
 app.post('/hitung-luas',luasBelahKetupat)
     // 3. kasih response ke client
     res.status(200).send('Luas:' + luas);
-;
 
-app.post('/hitung-keliling', function (req, res) {
-    // 1. ambil data dari client
-    const data = req.body;
-    const sisi = data.sisi
- 
-    // 2. hitung keliling
-    const keliling = 4*sisi;
+app.post('/hitung-keliling', kelilingBelahKetupat)
     // 3. kasih response ke client
     res.status(200).send('keliling:' + keliling);
-});
 
 app.post('/hitung-luas-keliling', function(req, res) {
     // 1. ambil data dari client
